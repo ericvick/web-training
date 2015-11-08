@@ -114,10 +114,38 @@
 			}
 		}
 	}
+	function validate_email(field,alerttxt)
+	{
+		with(field)
+		{
+			apos=value.indexOf("@");
+			dotpos=value.lastIndexOf(".");
+			if(apos<1||dotpos-apos<2)
+			{
+				alert(alerttxt+apos+"  "+dotpos);//test sum not god
+				return false;
+			}
+			else
+			{
+				return true;
+			}
+		}
+	}
+	function validate_form(thisform)
+	{
+		with(thisform)
+		{
+			if(validate_email(email,"Not a valid e-mail adress!")==false)
+			{
+				email.focus();
+				return false;	
+			}
+		}
+	}
 	</script>
 </head>
 <body>
-	<form onsubmit="return checkforms(this)" method="post">
+	<form onsubmit="return validate_form(this)" method="post">
 	<input type="text" name="email"/>
 	<input type="submit"  value="show" />
 	</form>
