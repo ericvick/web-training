@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>js-1</title>
+	<script type="text/javascript">
+	var carname="volvo";
+	function personShow()
+	{
+		var person=
+		{
+		name:"liquanwen",
+		sex:"male",
+		age:"18"
+		};
+		document.write(person.name+"/"+person.sex);
+	}
+	function personshow1()
+	{
+		person=new Object();
+		person.firstname="li";
+		person.lastname="quanwen";
+		person.age="34";
+		person.eyecolor="gray";
+		alert(person.firstname.toUpperCase()+person.lastname+" eye is"+person.eyecolor+person.age.length);
+	}
+	function showname(a,b)
+	{
+		return a*b;
+	}
+	function getcheng()
+	{
+		var cheng=showname('12','21');
+		alert("chengji is: "+cheng);
+	}
+	function shownames()
+	{
+		alert(carname+" show");
+	}
+	function getday()
+	{
+		var day= new Date().getDay();
+		switch(day)
+		{
+			case 6:
+			x="sunday";
+			break;
+			case 1:
+			x="moday";
+			break;
+			default:
+			x="looking for weekend!"
+
+		}
+		alert("today is" +x);
+	}
+	function showCars()
+	{
+		cars=["volvo","bmw","saab","ford"];
+		list:
+		{
+			document.write(" This number is "+cars[0]+"<br/>");
+			document.write(" This number is "+cars[1]+"<br/>");
+				break list;
+			document.write(" This number is "+cars[2]+"<br/>");
+			document.write(" This number is "+cars[3]+"<br/>");
+		
+			
+		}
+			
+		
+	}
+	var txt;
+	function testerros()
+	{
+		try
+		{
+			var x=document.getElementById("demo").value;
+			if (x=="") throw "empty";
+			if (x<5) throw "samll";
+			if (x>10) throw "big";
+			if (isNaN(x)) throw "not a number";
+			if (x>=5&&x<=10) throw "right";
+			
+		}
+		catch(err)
+		{
+			document.getElementById("showerrr").innerHTML="Error is"+err+".";
+		}
+	}
+	function validate_required(field,alerttxt)
+	{
+		with(field)
+		{
+			if(value==null||value=="")
+			{
+				alert(alerttxt);
+				return false;
+			}
+			else
+			{
+				return true;
+			}
+		}
+	}
+	function checkforms(thisform)
+	{
+		with(thisform)
+		{
+			if(validate_required(email,"Email must be filled out!")==flase)
+			{
+				email.focus();
+				return false;
+			}
+		}
+	}
+	</script>
+</head>
+<body>
+	<form onsubmit="return checkforms(this)" method="post">
+	<input type="text" name="email"/>
+	<input type="submit"  value="show" />
+	</form>
+	
+	<p id="showerrr">show Personl object!</p>
+</body>
+</html>
