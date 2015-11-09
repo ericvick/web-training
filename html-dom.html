@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>html-dom</title>
+	<style type="text/css">
+	.divs
+	{
+		background-color: #ca1830;
+		width: 120px;
+		height: 60px;
+		color: #fff;
+		padding: 40px;
+	}
+	</style>
+	<script type="text/javascript">
+	function showintro()
+	{
+		var x=document.getElementById("intro");
+		document.getElementById("showit").innerHTML="this"+x.innerHTML;
+	}
+	function showmain()
+	{
+		var x=document.getElementById("main");
+		var y=x.getElementsByTagName("p");
+		document.write("id为main的div中的第一段文本是："+y[0].innerHTML);
+	}
+	function showtime()
+	{
+		document.write(Date());
+	}
+	function changeimg()
+	{
+		var imgsrc=document.getElementById("imgs");
+		imgs.src="http://www.w3school.com.cn/i/shanghai_lupu_bridge.jpg";
+		imgs.style.border="10px solid #ca1830";
+	}
+	function showtext()
+	{
+		document.getElementById("p1").style.visibility="visible";
+	}
+	function hidtext()
+	{
+		document.getElementById("p1").style.visibility="hidden";
+		document.getElementById("want").onclick=function(){changeimg()};
+	}
+	function checkcookies()
+	{
+		if(navigator.cookieEnabled==true)
+		{
+			alert("已启用 cookie!")
+		}
+		else
+		{
+			alert("未启用 cookie!")
+
+		}
+	}
+	function toupreass()
+	{
+		var tes=document.getElementById("texx").value;
+		document.getElementById("texx").value=tes.toUpperCase();
+	}
+	function mouseon()
+	{
+		document.getElementById("nima").innerHTML="caonima";
+	}
+	function mouseout()
+	{
+		document.getElementById("nima").innerHTML="show test!";
+
+	}
+	function addnewelement()
+	{
+		var para=document.createElement("p");
+		var node=document.createTextNode("new vc");
+		para.appendChild(node);
+
+		var element=document.getElementById("div1s");
+		var bas=document.getElementById("p4");
+		element.appendChild(para);
+		element.removeChild(bas);
+
+		bas.parentNode.removeChild(bas);
+	}
+	function person(firstname,lastname,age,eyecolor)
+	{
+	this.firstname=firstname;
+	this.lastname=lastname;
+	this.age=age;
+	this.eyecolor=eyecolor;
+	this.changename=changename;
+	function changename(name)
+	{
+		this.lastname=name;
+	}
+	}
+	function showobject()
+	{
+		person= new person("Bill","Gates",56,"blue");
+		person.changename("boib");
+		document.write(person.lastname+" is"+person.age+" years old!");
+	}
+	function trainnumber()
+	{
+		var x=1234567890987654321
+		document.write(x+"<br/>");
+		var y=0.2+0.1;
+		document.write(y+"<br/>");
+		var z=(0.2*10+0.1*10)/10;
+		document.write(z+"<br/>");
+
+	}
+	</script>
+</head>
+<body onload="checkcookies()" onunload="checkcookies()">
+	<p id="intro">这是intro </p>
+	<p>show intro change!</p>
+	<input type="submit" id="want" value="done"/>
+	<p id="showit"></p>
+	<div id="main" class="divs" onmousedown="mouseon()" onmouseup="mouseout()">
+		<p id="nima">show test!</p>
+	</div>
+
+	<img src="http://www.w3school.com.cn/i/eg_tulip.jpg" alt="" id="imgs"/>
+	<p id="p1">你看不见，你看得见！</p>
+	<input type="submit" value="show" onclick="showtext()"/>
+	<input type="submit" value="hide" onclick="hidtext()"/>
+	<input type="text" id="texx" onchange="toupreass()"/>
+	<div id="div1s">
+		<p id="p4">1</p>
+		<p id="p5">2</p>
+	</div>
+	<input type="submit" id="texssss" onclick="trainnumber()"/>
+	
+</body>
+</html>
