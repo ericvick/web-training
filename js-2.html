@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>js-2</title>
+<script type="text/javascript">
+function getlength()
+{
+	var txt="hello world!"
+	document.write(txt+"length is "+txt.length);
+	document.write("<p>Big:"+txt.big()+"</p>");
+	document.write("<p>samll:"+txt.small()+"</p>");
+	document.write("<p>Bold:"+txt.bold()+"</p>");
+	document.write("<p>Italics:"+txt.italics()+"</p>");
+	document.write("<p>Blink:"+txt.blink()+"</p>");
+	document.write("<p>Fixed:"+txt.fixed()+"</p>");
+	document.write("<p>Strike:"+txt.strike()+"</p>");
+	document.write("<p>Fontcolor:"+txt.fontcolor("#ca1830")+"</p>");
+	document.write("<p>Fontsize:"+txt.fontsize("24")+"</p>");
+	document.write("<p>Lowercase:"+txt.toLowerCase()+"</p>");
+	document.write("<p>Uppercase:"+txt.toUpperCase()+"</p>");
+	document.write("<p>Subscript:"+txt.sub()+"</p>");
+	document.write("<p>Superscript:"+txt.sup()+"</p>");
+	document.write("<p>Link:"+txt.link("http://www.baidu.com")+"</p>");
+}
+function showIndexOf()
+{
+	var str="hello world!"
+	document.write(str.indexOf("hello")+"<br/>");
+	document.write(str.indexOf("o")+"<br/>");
+	document.write(str.indexOf("world")+"<br/>");
+	document.write(str.indexOf("!")+"<br/>");
+
+}
+function showmatch()
+{
+	var str="hello world!";
+	document.write(str.match("hello")+"<br/>");
+	document.write(str.match("hello ")+"<br/>");
+	document.write(str.match("worlds")+"<br/>");
+	document.write(str.match("world!")+"<br/>");
+
+}
+function showreplace()
+{
+	var str="hello microsoft!"
+	document.write(str.replace(/microsoft/,"liquanwen")+"<br/>");
+}
+function addanchor()
+{
+	var str="hello world!";
+	document.write(str.anchor("myanchor"));
+}
+function showCharAt()
+{
+	var str="hello world!";
+	document.write("The 4rd char:"+str.charAt(3));
+}
+function FromCharCode()
+{
+	document.write(String.fromCharCode(72,69,76,76,79)+"<br/>");
+	document.write(String.fromCharCode(67,68,69)+"<br/>");
+
+}
+function showReplace2()
+{
+	var txe="java JAVA Script!";
+	document.write(txe.replace(/jaVa/ig,"Javascript"));
+}
+function showReplace3()
+{
+	var teet="Li, quanwen";
+	document.write(teet.replace(/(\w+)\s*, \s*(\w+)/, "$2 $1"));//正则表达式
+
+}
+function toUperrcase()
+{
+	var	name="aaa bbb ccc";
+	var uw=name.replace(/\b\w+\b/g, function(word){return word.substring(0,1).toUpperCase()+word.substring(1);}
+		);
+	document.write(uw);
+}
+function showspilt()
+{
+	var names="How are you doing today?"
+	document.write(names.split(" ")+"<br/>");
+	document.write(names.split("")+"<br/>");
+	document.write(names.split(" ",4)+"<br/>");
+
+
+}
+function showsubstr()
+{
+	var str="hello world!";
+	document.write(str.substr(3,7));
+}
+function showtoLowerCase()
+{
+	var str="hello word!"
+	document.write(str.toLocaleLowerCase());
+}
+</script>
+
+
+</head>
+<body>
+<input type="submit" onclick="getlength()"/>
+<input type="submit" onclick="showIndexOf()" value="Showindex"/>
+<input type="submit" onclick="showmatch()" value="Showmatch"/>
+<input type="submit" onclick="showreplace()" value="Showreplace"/>
+<input type="submit" onclick="addanchor()" value="Addanchor"/>
+<input type="submit" onclick="showCharAt()" value="ShowCharAt"/>
+<input type="submit" onclick="FromCharCode()" value="FromCharCodeShow"/>
+<input type="submit" onclick="showReplace2()" value="Showreplace2"/>
+<input type="submit" onclick="showReplace3()" value="Showreplace3"/>
+<input type="submit" onclick="toUperrcase()" value="Showreplace4"/>
+<input type="submit" onclick="showspilt()" value="showspilt"/>
+<input type="submit" onclick="showsubstr()" value="showsubstr"/>
+<input type="submit" onclick="showtoLowerCase()" value="showtoLowerCase"/>
+
+	
+</body>
+</html>
