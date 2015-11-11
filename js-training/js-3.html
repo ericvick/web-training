@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>js-3</title>
+<script type="text/javascript">
+	function showtime()
+	{
+		document.write(Date());
+	}
+	function showSecondtime()
+	{
+		var newtime=new Date();
+		document.write("From 1970/01/01 to now "+newtime.getTime()+"seconds!");
+	}
+	function getoneday()
+	{
+		var d=new Date();
+		var seconds=d.getMilliseconds();
+		var minutes=d.getMinutes();
+		var hours=d.getHours();
+		var day=d.getDay();
+		var month=d.getMonth()+1;
+		var year=d.getFullYear();
+		document.write(year+"/"+month+"/"+day+"/"+hours+"/"+minutes+"/"+seconds+"   "+"now:"+d);
+	}
+	function ateDay()
+	{
+		var birthday=new Date("July 21, 1983 01:15:00");
+		document.write(birthday.getDate()+"/"+birthday.getHours());
+	}
+	function GetUtcDay()
+	{
+		var d=new Date();
+		var seconds=d.getUTCSeconds();
+		var minutes=d.getUTCMinutes();
+		var hours=d.getUTCHours();
+		var day=d.getUTCDate();
+		var month=d.getUTCMonth()+1;
+		var year=d.getUTCFullYear();
+		document.write(year+"/"+month+"/"+day+"/"+hours+"/"+minutes+"/"+seconds+"<br/>"+"now:"+d);
+	}
+	function showparse()
+	{
+		var minutes = 1000 * 60
+		var hours = minutes * 60
+		var days = hours * 24
+		var years = days * 365
+		var d=Date.parse("July 20, 2015");
+		document.write(d/years);
+	}
+	function showDate()
+	{
+		var d=new Date();
+		d.setDate(15);
+		d.setHours(15);
+		d.setMinutes(15);
+		d.setMonth(10);
+		document.write(d);
+		document.write(d.toString());
+
+	}
+	function emplo(name,job,born)
+	{
+		this.name=name;
+		this.job=job;
+		this.born=born;
+	}
+	function showobject()
+	{
+		var bill=new emplo("li","web",1992);
+		document.write(bill.born);
+		document.write(bill.toSource());
+
+	}
+	function CreatArry()
+	{
+		var cars=new Array(3);
+		cars[0]="volvo";
+		cars[1]="bmw";
+		cars[2]="saab";
+		for (var i = 0; i < cars.length; i++)
+		{
+			document.write(cars[i]+"<br/>");
+		}
+		for(var car in cars)
+		{
+			document.write(cars[car]+"<br/>");
+		}
+
+	}
+	function concatArry()
+	{
+		var cars=new Array(3);
+		cars[0]="volvo";
+		cars[1]="bmw";
+		cars[2]="saab";
+		var news=["movie","entirmaint","music","sports"];
+		document.write(cars.concat(news).sort());
+	}
+	function sortnum(a,b)
+	{
+		return a-b;
+	}
+	function sornumer()
+	{
+		var arr=new Array(5);
+		arr[0] = "10"
+		arr[1] = "5"
+		arr[2] = "40"
+		arr[3] = "25"
+		arr[4] = "1000"
+		document.write(arr.sort(sortnum));
+	}
+</script>
+</head>
+
+<body>
+	<input type="submit" value="showtime" onclick="showtime()"/>
+	<input type="submit" value="showSecondtime" onclick="showSecondtime()"/>
+	<input type="submit" value="showOneDayDetil" onclick="getoneday()"/>
+	<input type="submit" value="ateday" onclick="ateDay()"/>
+	<input type="submit" value="utctime" onclick="GetUtcDay()"/>
+	<input type="submit" value="showparse" onclick="showparse()"/>
+	<input type="submit" value="showDate" onclick="showDate()"/>
+	<input type="submit" value="showobject" onclick="showobject()"/>
+	<input type="submit" value="CreatArry" onclick="CreatArry()"/>
+	<input type="submit" value="concatArry" onclick="concatArry()"/>
+	<input type="submit" value="sornumer" onclick="sornumer()"/>
+
+</body>
+</html>
